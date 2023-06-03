@@ -1,0 +1,126 @@
+<html>
+
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+
+    <style>
+        
+        body {	
+  	        background-image: url('D:/Z/CU/SEM3/Data Analytics/CIA/EndSem/Deployment/bg4.webp');
+  	        background-repeat: no-repeat;
+  	        background-attachment: fixed;
+  	        background-size: 100% 100%;
+	    }
+
+        input{
+            background-color: rgb(255, 255, 255);
+            color: rgb(32, 28, 28)
+        }
+
+        h1{
+            font-size: 40px;
+            text-align: center;
+            font-family: "Verdana", sans-serif;
+        }
+
+        button{
+            border-radius: 12px;
+            font-size: 20px;
+            background-color: rgb(0, 0, 0);
+            color: azure;
+        }
+
+        .main {
+            justify-content: left;
+            align-items: left;
+            text-align: center;
+        }
+
+    </style>
+
+	<body>
+
+        <marquee  direction="right" scrollamount="12" onmouseover="this.stop();" onmouseout="this.start();">
+			<img src="D:/Z/CU/SEM3/Data Analytics/CIA/EndSem/Deployment/stickman.gif" width="120" height="80" alt="Natural"/>
+		</marquee>
+
+        <main class='main'>
+
+        <section class='right section'>
+        </section>
+
+        <section class='left section'>
+            <div class="heading">
+                <h1>Social Support Calculator</h1> 
+            </div>
+
+            <div>
+                Age: <input id = "age" /> <br/><br>
+                Gender: <input id = "gender" /> <br/>
+                There is a special person who is around when I am in need: <input id = "ss1"/></br><br>
+                There is a special person with whom I can share my joys and sorrows: <input id = "ss2"/></br><br>
+                My family really tries to help me: <input id = "ss3"/> <br/><br>
+                I getz the emotional help and support I need from my family: <input id = "ss4"/> <br/><br>
+                I have a special person who is a real source of comfort to me: <input id = "ss5"/> <br/><br>
+                My friends really try to help me: <input id = "ss6"/> <br/><br>
+                I can count on my friends when things go wrong: <input id = "ss7"/> <br/><br>
+                I can talk about my problems with my family: <input id = "ss8"/> <br/><br>
+                I have friends with whom I can share my joys and sorrows: <input id = "ss9"/> <br/><br>
+                There is a special person in my life who cares about my feelings: <input id = "ss10"/> <br/><br>
+                My family is willing to help me make decisions: <input id = "ss11"/> <br/><br>
+                I can talk about my problems with my friends: <input id = "ss12"/> <br/><br>
+                <br>
+                <button onclick="callServer()" id = "submitButton"> SUBMIT </button>
+                <br><br><br>
+                SS Score: <input id = "ssscore"/>
+                SS Status: <input id = "ssstatus"/>
+                
+                <script>
+
+                    function callServer(){
+                      
+                        var settings = {
+                            "url": "http://localhost:8080/calculateSSscore",
+                            "method": "POST",
+                            "timeout": 0,
+                            "headers": {
+                                "Content-Type": "application/json"
+                            },
+                            "data": JSON.stringify({
+                                "age": document.getElementById("age").value,
+                                "gender": document.getElementById("gender").value,
+                                "ss1": document.getElementById("ss1").value,
+                                "ss2": document.getElementById("ss2").value,
+                                "ss3": document.getElementById("ss3").value,
+                                "ss4": document.getElementById("ss4").value,
+                                "ss5": document.getElementById("ss5").value,
+                                "ss6": document.getElementById("ss6").value,
+                                "ss7": document.getElementById("ss7").value,
+                                "ss8": document.getElementById("ss8").value,
+                                "ss9": document.getElementById("ss9").value,
+                                "ss10": document.getElementById("ss10").value,
+                                "ss11": document.getElementById("ss11").value,
+                                "ss12": document.getElementById("ss12").value,
+                            }),
+                            };
+
+                        console.log(settings)
+                          
+
+                        $.ajax(settings).done(function (response) { 
+                            console.log(response);
+
+                            document.getElementById("ssscore").value = response['SS_score'];
+                            document.getElementById("ssstatus").value = response['SS_status'];
+                        });
+                    }
+                    
+
+                </script>
+            </div>
+      
+        </section>
+        </main>
+	</body>
+</html>

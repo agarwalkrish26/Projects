@@ -1,0 +1,141 @@
+<html>
+
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="TemplateMo">
+        <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	</head>
+
+    <style>
+        
+    body{
+        background-image: url('D:/Z/CU/SEM3/Data Analytics/CIA/EndSem/Deployment/bg4.webp');
+        color: rgb(207, 190, 190)
+        background-repeat: no-repeat;
+  	    background-attachment: fixed;
+  	    background-size: 100% 100%;
+    }
+
+    input{
+        background-color: rgb(250, 247, 247);
+        color: rgb(32, 28, 28)
+    }
+
+    h1{
+        text-align: center;
+        margin-top: 50px;
+        margin-left: 40px;
+        font-size: 40px;
+        font-family: "Verdana", sans-serif;
+
+    }
+
+    button{
+        border-radius: 12px;
+        font-size: 20px;
+        background-color: rgb(18, 18, 18);
+        color:rgb(250, 247, 247);
+    }
+    
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div{
+    margin-top:50px;
+    margin-left:100px;
+}
+
+    </style>
+
+	<body>
+
+        <marquee  direction="right" scrollamount="12" onmouseover="this.stop();" onmouseout="this.start();">
+			<img src="D:/Z/CU/SEM3/Data Analytics/CIA/EndSem/Deployment/stickman.gif" width="120" height="80" alt="Natural"/>
+		</marquee> 
+        
+       <main class='main'> 
+
+        <section class='right section'>
+            
+                <h1>Resilience Score Predictor</h1>
+                
+                <div>
+                    Age: <input id = "age" /> <br/><br>
+                    Gender: <input id = "gender" /> <br/><br>
+                    There is a special person who is around when I am in need: <input id = "ss1"/> <br/><br>
+                    There is a special person with whom I can share my joys and sorrows: <input id = "ss2"/> <br/><br>
+                    My family really tries to help me: <input id = "ss3"/> <br/><br>
+                    I getz the emotional help and support I need from my family: <input id = "ss4"/> <br/><br>
+                    I have a special person who is a real source of comfort to me: <input id = "ss5"/> <br/><br>
+                    My friends really try to help me: <input id = "ss6"/> <br/><br>
+                    I can count on my friends when things go wrong: <input id = "ss7"/> <br/><br>
+                    I can talk about my problems with my family: <input id = "ss8"/> <br/><br>
+                    I have friends with whom I can share my joys and sorrows: <input id = "ss9"/> <br/><br>
+                    There is a special person in my life who cares about my feelings: <input id = "ss10"/> <br/><br>
+                    My family is willing to help me make decisions: <input id = "ss11"/> <br/><br>
+                    I can talk about my problems with my friends: <input id = "ss12"/> <br/><br>
+                    <center><button onclick="callServer()" id = "submitButton"> SUBMIT </button></center>
+                    <br/>
+                    <center>R Score: <input id = "rscore" /></center><br>
+                    <center>R Status: <input id = "rstatus" /></center>
+
+                
+                <script>
+
+                    function callServer(){
+                      
+                        var settings = {
+                                          "url": " http://127.0.0.1:8080/predictValue",
+                                          "method": "POST",
+                                          "timeout": 0,
+                                          "headers": {"Content-Type": "application/json"},
+                                              
+                  
+                        "data": JSON.stringify({
+                                        "age": document.getElementById("age").value,
+										"gender": document.getElementById("gender").value,
+										"ss1": document.getElementById("ss1").value,
+										"ss2": document.getElementById("ss2").value,
+										"ss3": document.getElementById("ss3").value,
+										"ss4": document.getElementById("ss4").value,
+										"ss5": document.getElementById("ss5").value,
+										"ss6": document.getElementById("ss6").value,
+										"ss7": document.getElementById("ss7").value,
+										"ss8": document.getElementById("ss8").value,
+										"ss9": document.getElementById("ss9").value,
+										"ss10": document.getElementById("ss10").value,
+										"ss11": document.getElementById("ss11").value,
+										"ss12": document.getElementById("ss12").value
+                                    
+                                }),
+                        };
+                          
+
+                        $.ajax(settings).done(function (response) {
+                              console.log(response);
+
+                              document.getElementById("rscore").value = response['R_score']
+                              document.getElementById("rstatus").value = response['R_status']
+                        });
+                    }
+                    
+                
+
+                </script>
+                </div>
+      
+        </section>
+      
+       </main>
+
+
+	</body>
+
+</html>
