@@ -1,0 +1,29 @@
+------------------ About the Psycological Evaluation ------------------ 
+
+I conducted a psychological evaluation with students of CHRIST (Deemed to be University) Pune, Lavasa Campus as the target population for the same. The evaluation aimed at calculating the Resilience and Social Support Score for individuals.
+Link to the form: https://forms.gle/XKhTci8azE9GVMkT9
+
+Social Support: A network of family, friends, neighbors, and community members that is available in times of need to give psychological, physical, and financial help.
+Resilience: The ability to cope with and recover from setbacks.
+
+After the scores were calculated, suitable type of analysis was done on the data to predict the Resilience Score from Social Support variables. The project primarily focuses on sampling techniques and prediction/estimmation. The Questionnaire selected for this evaluation has already been used in publications and have a valid and verified scoring technique.
+
+The links to the questionnaire and their respective scoring techniques are listed below:
+
+Social Support: https://elcentro.sonhs.miami.edu/research/measures-library/mspss/index.html#:~:text=The%20Multidimensional%20Scale%20of%20Perceived,%2C%205%20%3D%20strongly%20agree
+Resilience: https://www.nwpgmd.nhs.uk/sites/default/files/resiliencequestionnaire.pdf
+
+------------------ Problem Definition ------------------ 
+
+Collect data from students and calculate their Resilience and Social Support Score. The data collected is considered to be noisy and hence, imply various functions offered by libraries to clean the same and gain meaningful insightfuls.
+
+------------------ Approach/Method ------------------ 
+
+Collecting survey throughout the campus to gather data.
+Importing and structuring the data onto pandas dataframe.
+Renaming the columns for easy computation.
+Creating user-defined functions for data conversion to accepted scale.
+Extensive Data Visualization for useful insights.
+Performing the suitable sampling technique to derive a sample from the population.
+Performing Hypothesis/Prediction on the data.
+
