@@ -1,0 +1,24 @@
+------------------ About the Project ------------------
+
+The project aims to classify images of hand-stands, push-ups, and crunches using image recognition techniques. The project involves several stages, including pre-processing, data preparation, and model training.
+
+To begin with, the images are pre-processed to ensure that they are of uniform size, format, and resolution. The pre-processing stage involves several steps, including resizing, normalization, and conversion to grayscale.
+
+For training the model, I have used various deep learning libraries such as TensorFlow and Keras. We have also utilized the YOLO (You Only Look Once) algorithm, which is a state-of-the-art object detection algorithm that uses convolutional neural networks (CNNs) to detect and classify objects in real-time.
+
+In addition, I have used various pre-trained models, such as DarkNet, to speed up the training process and achieve higher accuracy. I have also utilized various data augmentation techniques, such as cropping to increase the diversity of the training data and improve the model's generalization capabilities.
+
+The project also involves the use of various Python libraries, such as NumPy, OpenCV, and OS, to manage the image data, manipulate and preprocess the images, and visualize the results.
+
+------------------ Problem Definition ------------------
+
+Classification between Push Ups, Hand stands and Crunches using Image Classification.
+
+------------------ Approach/Method ------------------
+
+1. The images were loaded onto python.
+2. The images were renamed according to the classes and were brought to a common format - jpg.
+3. The people inside the images were cropped out using YOLO v5 Object Detection algorithm.
+4. The cropped images were then turned to grayscale images.
+5. The images at the last stage were reshaped to 300x300 pixels.
+6. After the pre-processing stage, the images were trained on a CNN model.
