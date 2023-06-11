@@ -1,0 +1,37 @@
+------------------ About the Project ------------------
+
+The class of 3BSc DS of CHRIST (Deemed to be University) Pune, Lavasa Campus had to submit a Mini Project as a final submission component for their subject - Data Analytics with Mini Project.
+I conducted a psychological evaluation with students as the target population for the same. The evaluation aimed at calculating the Resilience and Social Support Score for individuals.
+
+Social Support: A network of family, friends, neighbors, and community members that is available in times of need to give psychological, physical, and financial help.
+Resilience: The ability to cope with and recover from setbacks.
+
+After the scores were calculated, various types of Regressions were done on the data to predict the Resilience Score from Social Support variables. The project primarily focuses on pre-processing and data wrangling rather than Machine Learning itself. The Questionnaire selected for this evaluation has already been used in publications and have a valid and verified scoring technique.
+
+The links to the questionnaire and their respective scoring techniques are listed below:
+
+Social Support: https://elcentro.sonhs.miami.edu/research/measures-library/mspss/index.html#:~:text=The%20Multidimensional%20Scale%20of%20Perceived,%2C%205%20%3D%20strongly%20agree
+Resilience: https://www.nwpgmd.nhs.uk/sites/default/files/resiliencequestionnaire.pdf
+
+------------------ Objective ------------------
+
+Data Wrangling using various regex and pandas functions.
+Caculating Resilience and Social Support Score of individuals.
+Performing various types of Regression Analysis to predict the R Score using Social Support variables.
+Feature Selection using correlation between variables.
+Create a local server to host the prediction
+
+------------------ Problem Definition ------------------
+
+Collect data from students and calculate their Resilience and Social Support Score. The data collected is considered to be noisy and hence, imply various functions offered by libraries to clean the same and gain meaningful insightfuls.
+
+------------------ Approach/Method ------------------
+
+Collecting survey throughout the campus to gather data.
+Importing and structuring the data onto pandas dataframe.
+Renaming the columns for easy computation.
+Creating user-defined functions for data conversion to accepted scale.
+Extensive Data for useful insights.
+Pre processing the data for Regression Analysis.
+Various types of Regression Analysis and boosting methods.
+Deployment of method using Flask, HTML and CSS.
